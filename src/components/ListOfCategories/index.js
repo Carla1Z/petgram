@@ -1,14 +1,15 @@
 import React from "react";
 import { Category } from "../Category";
+import { List, Item } from "./styles";
 
 export const ListOfCategories = () => {
   return (
-    <ul>
-      {[1, 2].map((category) => (
-        <li key={category}>
+    <List>
+      {[1, 2, 3, 4].map((category) => (
+        <Item key={category}>
           <Category />
-        </li>
+        </Item>
       ))}
-    </ul>
+    </List>
   );
 };
