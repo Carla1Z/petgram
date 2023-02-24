@@ -1,8 +1,8 @@
-import { Category } from "./components/Category";
+import { ListOfCategories } from "./components/ListOfCategories";
 
 function App() {
   return (
-    <Category />
+    <ListOfCategories />
   );
 }
 
