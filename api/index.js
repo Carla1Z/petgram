@@ -1,8 +1,11 @@
-const express = require("express");
-const routes = require('./src/routes/index.js')
-const app = express();
+const app = require("./app.js");
+const { conn } = require("./src/db.js");
 
-app.use('/api', routes)
-app.listen(3001, () => {
-  console.log("servidor escuchando en el puerto 3001");
-});
+conn.sync({
+    force: true,
+  }).then(() => {
+    console.log("Base de datos conectada");
+    app.listen(3001, () => {
+      console.log("Servidor escuchando en el puerto 3001");
+    });
+  });
