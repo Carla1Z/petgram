@@ -43,11 +43,10 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 const { Categories, Users, Photos } = sequelize.models;
 
-Users.belongsToMany(Photos, { through: Categories }); 
-Photos.belongsToMany(Users, { through: Categories }); 
-
+Users.belongsToMany(Categories, { through: Photos });
+Categories.belongsToMany(Users, { through: Photos });
 
 module.exports = {
   ...sequelize.models,
-  conn: sequelize, 
+  conn: sequelize,
 };
