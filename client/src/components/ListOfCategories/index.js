@@ -2,14 +2,16 @@ import React from "react";
 import { Category } from "../Category";
 import { List, Item } from "./styles";
 
-export const ListOfCategories = () => {
+export const ListOfCategories = ({allCategories}) => {
   return (
     <List>
-      {[1, 2, 3, 4].map((category) => (
-        <Item key={category}>
-          <Category />
+      {
+      allCategories.map((category) => (
+        <Item key={category.id}>
+          <Category {...category} />
         </Item>
-      ))}
+      ))
+      }
     </List>
   );
 };

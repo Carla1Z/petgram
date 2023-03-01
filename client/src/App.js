@@ -1,11 +1,12 @@
-import { ListOfCategories } from "./components/ListOfCategories";
 import { GlobalStyle } from "./GlobalStyles";
+import { Home } from "./views/Home";
 
 function App() {
   return (
     <div>
       <GlobalStyle />
-      <ListOfCategories />
+      {/* <ListOfCategories /> */}
+      <Home />
     </div>
   );
 }
