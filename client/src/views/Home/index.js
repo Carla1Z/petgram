@@ -1,6 +1,6 @@
 import React from "react";
 import { ListOfCategories } from "../../components/ListOfCategories/index.js";
-import { PhotoCard } from "../../components/PhotoCard/index.js";
+import { ListOfPhotoCard } from "../../components/ListOfPhotoCard/index.js";
 import { getCategories } from "../../redux/actions.js";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -16,7 +16,7 @@ export const Home = () => {
   return (
     <div>
       <ListOfCategories allCategories={allCategories} />
-      <PhotoCard />
+      <ListOfPhotoCard />
     </div>
   );
 };
