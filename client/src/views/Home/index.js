@@ -1,21 +1,22 @@
-import React from 'react';
-import { ListOfCategories } from '../../components/ListOfCategories/index.js'
-import {getCategories} from '../../redux/actions.js'
-import {useDispatch, useSelector} from 'react-redux'
-import { useEffect } from "react"
+import React from "react";
+import { ListOfCategories } from "../../components/ListOfCategories/index.js";
+import { PhotoCard } from "../../components/PhotoCard/index.js";
+import { getCategories } from "../../redux/actions.js";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 
 export const Home = () => {
-    const dispatch = useDispatch()
-    const allCategories = useSelector((state) => state.categories)
+  const dispatch = useDispatch();
+  const allCategories = useSelector((state) => state.categories);
 
-    useEffect(() => {
-        dispatch(getCategories())
-    }, [dispatch])
+  useEffect(() => {
+    dispatch(getCategories());
+  }, [dispatch]);
 
   return (
     <div>
-        <h2>Home</h2>
-        <ListOfCategories allCategories={allCategories} />
+      <ListOfCategories allCategories={allCategories} />
+      <PhotoCard />
     </div>
-  )
-}
+  );
+};

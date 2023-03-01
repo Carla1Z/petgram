@@ -1,3 +1,4 @@
+import React from 'react';
 import { GlobalStyle } from "./GlobalStyles";
 import { Home } from "./views/Home";
 
