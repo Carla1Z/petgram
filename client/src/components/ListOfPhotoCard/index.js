@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getPhotos } from "../../redux/actions";
 import { PhotoCard } from "../PhotoCard";
 
 export const ListOfPhotoCard = () => {
+  const dispatch = useDispatch()
+  const allPhotos = useSelector((state) => state.photos)
+
+  useEffect(() => {
+    dispatch(getPhotos())
+  }, [dispatch])
   return (
     <ul>
-      {[1, 2, 3, 4, 5].map((id) => (
-        <PhotoCard key={id} id={id} />
+      {allPhotos.map((photo) => (
+        <PhotoCard key={photo.id} {...photo} />
       ))}
     </ul>
   );
