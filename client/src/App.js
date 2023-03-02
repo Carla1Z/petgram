@@ -1,5 +1,5 @@
 import React from 'react';
-import { GlobalStyle } from "./GlobalStyles";
+import { GlobalStyle } from "./styles/GlobalStyles.js";
 import { Home } from "./views/Home";
 import { Logo } from './components/Logo';
 
